@@ -1,0 +1,156 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API de Peliculas",
+        "description": "",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/peliculas": {
+            "get": {
+                "tags": [
+                    "Peliculas"
+                ],
+                "summary": "Peliculas",
+                "operationId": "get_peliculas",
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "400": {
+                        "description": "Invalid request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                }
+            }
+        },
+        "/api/peliculas/{anio}": {
+            "get": {
+                "tags": [
+                    "Peliculas por anio"
+                ],
+                "summary": "Peliculas por anio",
+                "operationId": "get_peliculas_x_anio",
+                "parameters": [
+                    {
+                        "name": "anio",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "400": {
+                        "description": "Invalid request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                }
+            }
+        },
+        "/api/pelicula/{nombre}": {
+            "get": {
+                "tags": [
+                    "Info de pelicula"
+                ],
+                "summary": "Informacion de una pelicula",
+                "operationId": "get_info",
+                "parameters": [
+                    {
+                        "name": "nombre",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "400": {
+                        "description": "Invalid request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                }
+            }
+        },
+        "/api/pelicula/{nombre}/desc": {
+            "get": {
+                "tags": [
+                    "Descripcion de una pelicula"
+                ],
+                "summary": "Descripcion de una pelicula",
+                "operationId": "get_descripcion",
+                "parameters": [
+                    {
+                        "name": "nombre",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "400": {
+                        "description": "Invalid request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "bearerFormat": "JWT",
+                "scheme": "bearer"
+            }
+        }
+    },
+    "security": [
+        []
+    ]
+}
