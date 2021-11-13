@@ -1,0 +1,10 @@
+.peliculaContainer {
+  flex: auto;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  width: fit-content;
+}
+
+.moreInfoBtn {
+  color: aqua
+}
