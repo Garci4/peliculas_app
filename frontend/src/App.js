@@ -1,15 +1,18 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from "react";
+import React, { Fragment } from "react";
+import Navbar from "./components/navbar";
 import PeliculasGrid from "./components/peliculasGrid";
-import FiltroPorAnio from "./components/filtroPorAnio";
 
 const App = () => {
 	return (
-		<div className="container">
-			<h1>Peliculas</h1>
-			<FiltroPorAnio></FiltroPorAnio>
-			<PeliculasGrid></PeliculasGrid>
-		</div>
+		<Fragment>
+			<Navbar></Navbar>
+			<main className="">
+				<div className="container">
+					<PeliculasGrid></PeliculasGrid>
+				</div>
+			</main>
+		</Fragment>
 	);
 };
 

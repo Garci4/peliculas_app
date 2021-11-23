@@ -1,25 +1,17 @@
 body {
+  background: rgb(228, 34, 82);
+  background: linear-gradient(0deg, rgba(228, 34, 82, 1) 0%, rgba(28, 1, 1, 1) 100%);
   font-family: sans-serif;
-  padding-top: 1em;
-  padding-bottom: 1em;
   font-size: 2em;
-  width: 80%;
   margin: 0 auto;
+  height: 100vh;
 }
 
-input,
-textarea,
-button,
-p,
-div,
-section,
-article,
-select {
-  display: block;
-  width: 100%;
-  font-family: sans-serif;
-  font-size: 1em;
-  margin: 0.5em;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 .done {
