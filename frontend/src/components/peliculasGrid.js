@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from "react";
 import Pelicula from "./pelicula";
 
-const OMDB_API = "http://www.omdbapi.com/?i=tt3896198&apikey=f9c16951";
 const PELICULAS_API = "http://127.0.0.1:8000/api/peliculas";
 const PELICULAS_API2 = "http://127.0.0.1:8000/api/pelicula";
 
@@ -10,7 +9,6 @@ class PeliculasGrid extends Component {
 		super();
 		this.state = {
 			data: [],
-			dataJson: [],
 			toSearch: "",
 			error: "",
 		};
@@ -22,33 +20,7 @@ class PeliculasGrid extends Component {
 		this.setState({
 			data: resJSON,
 		});
-		const poster = this.buildJson(this.state.data);
-		this.setState({
-			dataJson: poster,
-		});
 	}
-
-	fetchPoster = async (nombre) => {
-		const res = await fetch(`${OMDB_API}&s=${nombre}`);
-		const resJSON = await res.json();
-		const poster = await resJSON.Search[0].Poster;
-		return poster;
-	};
-
-	buildJson = (data) => {
-		const _datos = [];
-		const dataJson = {};
-		data.map((pelicula) => {
-			const poster = this.fetchPoster(pelicula.nombre);
-			_datos.push({
-				pelicula: pelicula,
-				poster: poster,
-			});
-			return _datos;
-		});
-		dataJson.movies = _datos;
-		return _datos;
-	};
 
 	async handleFilterSubmit(e) {
 		e.preventDefault();
