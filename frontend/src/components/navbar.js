@@ -25,10 +25,12 @@ const Navbar = () => {
 					</a>
 				</div>
 				<div>
-					<span>
+					<span className="text text-white">
+						By
 						<a
 							href="https://www.linkedin.com/in/garci4"
 							target="_blanck"
+							style={{ padding: "5px" }}
 						>
 							Garci4
 						</a>
