@@ -22,7 +22,10 @@ export default class asd extends Component {
 	render() {
 		const pelicula = this.props.pelicula;
 		const poster = this.state.poster;
-		this.fetchPoster(pelicula.nombre);
+		if (poster === "") {
+			this.fetchPoster(pelicula.nombre);
+		}
+
 		return (
 			<div className="col-md-4">
 				<div className="card animated fadeInUp bg-dark text-center text-light">
