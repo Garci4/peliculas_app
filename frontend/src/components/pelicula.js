@@ -27,19 +27,59 @@ export default class asd extends Component {
 		}
 
 		return (
-			<div className="col-md-4">
-				<div className="card animated fadeInUp bg-dark text-center text-light">
-					<img src={poster} alt={testPoster}></img>
+			<div className="col-md-4" style={{ padding: 10 }}>
+				<div className="card animated fadeInUp bg-dark text-left text-light">
+					<img
+						src={poster}
+						alt={testPoster}
+						style={{
+							display: "block",
+							"max-width": "100%",
+							height: "auto",
+							"max-height": "550px",
+						}}
+					></img>
 					<div className="card-body">
-						<p className="card-title">
-							{pelicula.nombre} ({pelicula.anio})
+						<p
+							className="card-title"
+							style={{
+								color: "#090c12",
+								"font-weight": "bold",
+								"font-size": "xx-large",
+							}}
+						>
+							{pelicula.nombre}{" "}
+							<p
+								className="card-title"
+								style={{
+									color: "#090c12",
+									"font-weight": "bold",
+									"font-size": "large",
+								}}
+							>
+								({pelicula.anio})
+							</p>
 						</p>
-
-						<p className="card-text text-secondary">
+						<p
+							className="card-text"
+							style={{
+								color: "#13181f",
+								"font-weight": "bold",
+								"font-size": "medium",
+							}}
+						>
 							{pelicula.director}
 						</p>
-						<p className="card-text text-secondary">
-							"{pelicula.descripcion}"
+
+						<p
+							className="card-text"
+							style={{
+								color: "#060b12",
+								"font-weight": "light",
+								"font-size": "medium",
+							}}
+						>
+							{pelicula.descripcion}
 						</p>
 					</div>
 				</div>
