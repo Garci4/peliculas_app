@@ -36,7 +36,7 @@ export default class asd extends Component {
 							display: "block",
 							"max-width": "100%",
 							height: "auto",
-							"max-height": "550px",
+							"max-height": "500px",
 						}}
 					></img>
 					<div className="card-body">
